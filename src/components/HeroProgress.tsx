@@ -102,7 +102,7 @@ export default function HeroProgress() {
         {/* Floating +km labels */}
         {floaters.map(fl => (
           <div key={fl.id} className="floater" style={{ left: fl.x }}>
-            +{fl.km} km
+            +{fl.km.toFixed(2)} km
           </div>
         ))}
 
