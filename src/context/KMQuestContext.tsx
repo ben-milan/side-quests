@@ -194,7 +194,7 @@ function getInitialState(): KMQuestState {
   const saved = loadState();
   if (saved) return { ...saved, newAchievement: null };
   return {
-    goal: 1000,
+    goal: 100,
     entries: [],
     achievements: buildDefaultAchievements(),
     newAchievement: null,
