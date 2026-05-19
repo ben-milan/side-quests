@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { KMQuestProvider } from './context/KMQuestContext';
+import Header from './components/Header';
+import HeroProgress from './components/HeroProgress';
+import LogForm from './components/LogForm';
+import StatsRow from './components/StatsRow';
+import AchievementBanner from './components/AchievementBanner';
+import HistoryList from './components/HistoryList';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <KMQuestProvider>
+      <div className="app-root">
+        <div className="bg-grid" />
+        <div className="bg-glow bg-glow-1" />
+        <div className="bg-glow bg-glow-2" />
+        <div className="content-wrapper">
+          <Header />
+          <AchievementBanner />
+          <HeroProgress />
+          <LogForm />
+          <StatsRow />
+          <HistoryList />
+        </div>
+      </div>
+    </KMQuestProvider>
   );
 }
-
-export default App;

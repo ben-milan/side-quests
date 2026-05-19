@@ -1,0 +1,107 @@
+.achievement-banner {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: rgba(10, 18, 40, 0.92);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  border-radius: 18px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 40px rgba(168, 85, 247, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  max-width: 320px;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.achievement-banner.show {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.achievement-banner.hide {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.ab-icon {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.7));
+  animation: iconBounce 0.6s 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes iconBounce {
+  from { transform: scale(0.3) rotate(-20deg); }
+  to   { transform: scale(1) rotate(0deg); }
+}
+
+.ab-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ab-title {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neon-purple);
+  font-weight: 700;
+}
+
+.ab-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.ab-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* Animated background glow sweep */
+.ab-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(168, 85, 247, 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: glowSweep 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glowSweep {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (max-width: 480px) {
+  .achievement-banner {
+    top: auto;
+    bottom: 24px;
+    right: 12px;
+    left: 12px;
+    max-width: unset;
+  }
+}
