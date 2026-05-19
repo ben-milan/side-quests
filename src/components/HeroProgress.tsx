@@ -35,7 +35,7 @@ export default function HeroProgress() {
       setTimeout(() => setParticles(p => p.filter(pt => !newParticles.find(np => np.id === pt.id))), 1200);
     }
     prevTotalRef.current = totalKm;
-  }, [totalKm]);
+  }, [totalKm, state.goal]);
 
   const motMessage = () => {
     if (progressPct >= 100) return '🏆 Goal Crushed! Legendary!';

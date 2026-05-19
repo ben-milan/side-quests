@@ -3,7 +3,7 @@ import { useKMQuest } from '../context/KMQuestContext';
 import './StatsRow.css';
 
 export default function StatsRow() {
-  const { state, totalKm, streak, level, xp } = useKMQuest();
+  const { state, streak, level, xp } = useKMQuest();
   const unlockedCount = state.achievements.filter(a => a.unlocked).length;
 
   const stats = [

@@ -1,5 +1,5 @@
 import React, {
-  createContext, useContext, useReducer, useEffect, useState, useCallback,
+  createContext, useContext, useReducer, useEffect, useCallback,
 } from 'react';
 
 // ─── Types ───────────────────────────────────────────────────────────────────

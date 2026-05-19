@@ -17,7 +17,7 @@ export default function AchievementBanner() {
       }, 3500);
       return () => clearTimeout(t);
     }
-  }, [state.newAchievement]);
+  }, [state.newAchievement, clearNewAchievement]);
 
   if (!state.newAchievement) return null;
 
