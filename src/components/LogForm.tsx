@@ -59,8 +59,8 @@ export default function LogForm() {
               type="number"
               placeholder="0.0"
               value={km}
-              min={0.1}
-              step={0.1}
+              min={0.01}
+              step={0.01}
               onChange={e => setKm(e.target.value)}
             />
             <span className="km-unit">km</span>
